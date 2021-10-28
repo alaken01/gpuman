@@ -30,13 +30,6 @@ jobs:
     uses: script@v1
     with:
       script: |-
-        pip install scipy==1.3.3
-        pip install requests==2.22.0
-        pip install Pillow==6.2.1
         cd /inputs/stylegan2
-        python run_generator.py generate-images \
-          --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
-          --seeds=6600-6605 \
-          --truncation-psi=0.5 \
-          --result-dir=/outputs/generatedFaces
+        python run_generator.py 
       image: tensorflow/tensorflow:1.14.0-gpu-py3
